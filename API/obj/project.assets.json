@@ -12641,11 +12641,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\API\\API.csproj",
+      "projectUniqueName": "D:\\RIAN\\Github\\ReimbursementParking\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\API\\API.csproj",
+      "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\API\\API.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\API\\obj\\",
+      "outputPath": "D:\\RIAN\\Github\\ReimbursementParking\\API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12664,8 +12664,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj": {
-              "projectPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj"
+            "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj": {
+              "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj"
             }
           }
         }

@@ -12636,11 +12636,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Client\\Client.csproj",
+      "projectUniqueName": "D:\\RIAN\\Github\\ReimbursementParking\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Client\\Client.csproj",
+      "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\Client\\Client.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Client\\obj\\",
+      "outputPath": "D:\\RIAN\\Github\\ReimbursementParking\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12659,8 +12659,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj": {
-              "projectPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj"
+            "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj": {
+              "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj"
             }
           }
         }
