@@ -4124,11 +4124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj",
+      "projectUniqueName": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\Data.csproj",
+      "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\RIAN\\Github\\ASP.NetCore\\DotNetCore\\DotNetCore\\Data\\obj\\",
+      "outputPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
