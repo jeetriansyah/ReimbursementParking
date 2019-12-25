@@ -93,22 +93,6 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box">
-                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
-                                <div class="d-flex align-items-center">
-                                    <i class="mdi mdi-magnify font-20 mr-1"></i>
-                                    <div class="ml-1 d-none d-sm-block">
-                                        <span>Search</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter">
-                                <a class="srh-btn">
-                                    <i class="ti-close"></i>
-                                </a>
-                            </form>
-                        </li>
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -142,15 +126,27 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
-                            <a asp-controller="Users" asp-action="Index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                            <a asp-controller="Users" asp-action="index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
                                 <i class="mdi mdi-av-timer"></i>
                                 <span class="hide-menu">Dashboard</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a asp-controller="Profiles" asp-action="Index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                            <a asp-controller="Profiles" asp-action="index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
                                 <i class="mdi mdi-account-network"></i>
                                 <span class="hide-menu">Profile</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a asp-controller="Roles" asp-action="index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                <i class="mdi mdi-account"></i>
+                                <span class="hide-menu">Role</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a asp-controller="Departments" asp-action="index" class="sidebar-link waves-effect waves-dark sidebar-link" aria-expanded="false">
+                                <i class="mdi mdi-book-multiple"></i>
+                                <span class="hide-menu">Department</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
