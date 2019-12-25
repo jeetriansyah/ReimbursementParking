@@ -8,3 +8,13 @@ D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Da
 D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfo.cs
 D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.dll
 D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.pdb
+D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.deps.json
+D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfig.json
+D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfig.dev.json
+D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.dll
+D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.pdb
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.csproj.CoreCompileInputs.cache
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfoInputs.cache
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfo.cs
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.dll
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.pdb
