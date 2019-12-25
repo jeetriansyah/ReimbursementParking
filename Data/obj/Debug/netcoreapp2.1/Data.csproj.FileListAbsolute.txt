@@ -1,0 +1,10 @@
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\bin\Debug\netcoreapp2.1\Data.deps.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfig.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfig.dev.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\bin\Debug\netcoreapp2.1\Data.dll
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\bin\Debug\netcoreapp2.1\Data.pdb
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.csproj.CoreCompileInputs.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfoInputs.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfo.cs
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.dll
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\Data\obj\Debug\netcoreapp2.1\Data.pdb

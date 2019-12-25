@@ -1,0 +1,17 @@
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\API.deps.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\API.runtimeconfig.dev.json
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\API.dll
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\API.pdb
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\Data.dll
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\bin\Debug\netcoreapp2.1\Data.pdb
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.csprojAssemblyReference.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.csproj.CoreCompileInputs.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.RazorAssemblyInfo.cs
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.AssemblyInfoInputs.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.AssemblyInfo.cs
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.RazorTargetAssemblyInfo.cache
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.csproj.CopyComplete
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.dll
+D:\RIAN\Github\ASP.NetCore\DotNetCore\DotNetCore\API\obj\Debug\netcoreapp2.1\API.pdb
