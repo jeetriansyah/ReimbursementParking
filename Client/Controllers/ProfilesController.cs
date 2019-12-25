@@ -24,7 +24,12 @@ namespace Client.Controllers
         // GET: Profiles
         public ActionResult Index()
         {
-            return View();
+            var Id = HttpContext.Session.GetString("Id");
+            if (Id != null)
+            {
+                return View();
+            }
+            return RedirectToAction("Login", "Users");
         }
 
         // GET: Profiles/Details/5

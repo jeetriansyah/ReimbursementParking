@@ -231,102 +231,51 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title">Zero Configuration</h4>
-                                <h6 class="card-subtitle">
-                                    DataTables has most features enabled by default, so all you
-                                    need to do to use it with your own tables is to call the construction
-                                    function:<code> $().DataTable();</code>. You can refer full documentation from here
-                                    <a href="https://datatables.net/">Datatables</a>
-                                </h6>
                                 <div class="table-responsive">
                                     <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                         <div class="col-sm-12">
-                                            <table id="zero_config" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button>
+                                            <div class="modal fade" id="myModal" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Create New Supplier</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container">
+                                                                <form>
+                                                                    <div class="form-group" hidden="hidden">
+                                                                        <label for="Id">Id:</label>
+                                                                        <input type="text" class="form-control" id="Id" name="Id">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Name">Name:</label>
+                                                                        <input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Email">Email:</label>
+                                                                        <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="Email">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-success" data-dismiss="modal" id="Save" onclick="Save();">Submit</button>
+                                                            <button type="button" class="btn btn-warning" data-dismiss="modal" id="Update" onclick="Update();">Update</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <table id="departments" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
                                                 <thead>
-                                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 0px;" aria-sort="ascending">Name</th><th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 0px;">Position</th><th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 0px;">Office</th><th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 0px;">Age</th><th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 0px;">Start date</th><th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Salary</th></tr>
+                                                    <tr role="row">
+                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 0px;" aria-sort="ascending">Name</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 0px;">Action</th>
                                                 </thead>
-                                                <tbody>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Airi Satou</td>
-                                                        <td>Accountant</td>
-                                                        <td>Tokyo</td>
-                                                        <td class="">33</td>
-                                                        <td>2008/11/28</td>
-                                                        <td>$162,700</td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">Angelica Ramos</td>
-                                                        <td>Chief Executive Officer (CEO)</td>
-                                                        <td>London</td>
-                                                        <td class="">47</td>
-                                                        <td>2009/10/09</td>
-                                                        <td>$1,200,000</td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Ashton Cox</td>
-                                                        <td>Junior Technical Author</td>
-                                                        <td>San Francisco</td>
-                                                        <td class="">66</td>
-                                                        <td>2009/01/12</td>
-                                                        <td>$86,000</td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">Bradley Greer</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>London</td>
-                                                        <td class="">41</td>
-                                                        <td>2012/10/13</td>
-                                                        <td>$132,000</td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Brenden Wagner</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>San Francisco</td>
-                                                        <td class="">28</td>
-                                                        <td>2011/06/07</td>
-                                                        <td>$206,850</td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">Brielle Williamson</td>
-                                                        <td>Integration Specialist</td>
-                                                        <td>New York</td>
-                                                        <td class="">61</td>
-                                                        <td>2012/12/02</td>
-                                                        <td>$372,000</td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Bruno Nash</td>
-                                                        <td>Software Engineer</td>
-                                                        <td>London</td>
-                                                        <td class="">38</td>
-                                                        <td>2011/05/03</td>
-                                                        <td>$163,500</td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">Caesar Vance</td>
-                                                        <td>Pre-Sales Support</td>
-                                                        <td>New York</td>
-                                                        <td class="">21</td>
-                                                        <td>2011/12/12</td>
-                                                        <td>$106,450</td>
-                                                    </tr>
-                                                    <tr role="row" class="odd">
-                                                        <td class="sorting_1">Cara Stevens</td>
-                                                        <td>Sales Assistant</td>
-                                                        <td>New York</td>
-                                                        <td class="">46</td>
-                                                        <td>2011/12/06</td>
-                                                        <td>$145,600</td>
-                                                    </tr>
-                                                    <tr role="row" class="even">
-                                                        <td class="sorting_1">Cedric Kelly</td>
-                                                        <td>Senior Javascript Developer</td>
-                                                        <td>Edinburgh</td>
-                                                        <td class="">22</td>
-                                                        <td>2012/03/29</td>
-                                                        <td>$433,060</td>
-                                                    </tr>
-                                                </tbody>
+                                                <tbody class="departmentsbody" />
                                             </table>
                                         </div>
                                     </div>
@@ -364,7 +313,6 @@
     <!-- ============================================================== -->
     <!-- End Page wrapper  -->
     <!-- ============================================================== -->
-    </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
@@ -392,5 +340,189 @@
     <script src="~/datatables/dataTables.responsive.min.js"></script>
     <script src="~/datatables/datatable-basic.init.js"></script>
     <script src="~/datatables/datatable-basic.init.js"></script>
+    <script src="~/datatables/bootstrap.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#departments').dataTable({
+                "columnDefs": [{
+                    "orderable": false,
+                    "targets": 1
+                }],
+                "ajax": loadDataDepartments(),
+                "responsive": true
+            });
+        });
+        function loadDataDepartments() {
+            $.ajax({
+                url: "/Departments/List",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                async: false,
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, Department) {
+                        html += '<tr>';
+                        html += '<td>' + Department.Name + '</td>';
+                        html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetbyId(' + Department.Id + ')">Edit</button> ';
+                        html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Department.Id + ')" >Delete</button ></td > ';
+                        html += '</tr>';
+                        html += '</tr>';
+                        html += '</tr>';
+                    });
+                    $('.departmentsbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        function Save() {
+            if ($('#DepartmentName').val() === 0) {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Please Full Fill The Name',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                var Department = new Object();
+                Department.Id = $('#Id').val();
+                Department.Name = $('#DepartmentName').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/Departments/InsertOrUpdate/',
+                    data: Department
+                }).then((result) => {
+                    //debugger;
+                    if (result.StatusCode === 200) {
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Insert Successfully'
+                        });
+                        ResetTable();
+                    }
+                    else {
+                        Swal.fire('Error', 'Insert Fail', 'error');
+                        ClearScreen();
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            if ($('#Name').val() === 0) {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Please Full Fill The Name',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                //debugger;
+                var data = new Object();
+                data.Id = $('#Id').val();
+                data.Name = $('#Name').val();
+                data.Email = $('#Email').val();
+                $.ajax({
+                    url: "/Departments/InsertOrUpdate/",
+                    data: data
+                }).then((result) => {
+                    //debugger;
+                    $('#myModal').hide();
+                    if (result.StatusCode === 200) {
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Update Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        ResetTable();
+                    }
+                    else {
+                        Swal.fire('Error', 'Update Fail', 'error');
+                        ClearScreen();
+                    }
+                });
+            }
+        }
+
+        function GetbyId(Id) {
+            //debugger;
+            $('#DepartmentName');
+            $.ajax({
+                url: "/Departments/GetbyId/" + Id,
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                async: false,
+                success: function (result) {
+                    const obj = JSON.parse(result);
+                    $('#Id').val(obj.Id);
+                    $('#DepartmentName').val(obj.Name);
+                    $('#myModal').modal('show');
+                    $('#Update').show();
+                    $('#Save').hide();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function ClearScreen() {
+            $('#Id').val('');
+            $('#DepartmentName').val('');
+            $('#Update').hide();
+            $('#Save').show();
+        }
+
+        function ResetTable() {
+            $('#departments').dataTable().destroy();
+            $('#departments').dataTable({
+                "ajax": loadDataDepartments()
+            });
+        }
+
+        function Delete(Id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    //debugger;
+                    $.ajax({
+                        url: "/Departments/Delete/",
+                        type: "POST",
+                        data: { id: Id }
+                    }).then((result) => {
+                        //debugger;
+                        if (result.StatusCode === 200) {
+                            Swal.fire({
+                                position: 'center',
+                                type: 'success',
+                                title: 'Delete Successfully'
+                            });
+                            ResetTable();
+                        }
+                        else {
+                            Swal.fire('Error', 'Update Fail', 'error');
+                            ClearScreen();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,18 +1,53 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Client.Base;
+using Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Web;
 
 namespace Client.Controllers
 {
     public class DepartmentsController : Controller
     {
+        Port getPort = new Base.Port();
+        readonly HttpClient client = new HttpClient();
         // GET: Departments
         public ActionResult Index()
         {
-            return View();
+            var Id = HttpContext.Session.GetString("Id");
+            if (Id != null)
+            {
+                return View(List());
+            }
+            return RedirectToAction("Login", "Users");
+        }
+
+        public JsonResult List()
+        {
+            IEnumerable<Department> departments = null;
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var responseTask = client.GetAsync("Departments");
+            responseTask.Wait();
+            var result = responseTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IList<Department>>();
+                readTask.Wait();
+                departments = readTask.Result;
+            }
+            else
+            {
+                departments = Enumerable.Empty<Department>();
+                ModelState.AddModelError(string.Empty, "server error, try after some time");
+            }
+            return Json(departments);
         }
 
         // GET: Departments/Details/5

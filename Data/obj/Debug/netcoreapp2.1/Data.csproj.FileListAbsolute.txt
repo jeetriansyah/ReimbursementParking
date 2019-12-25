@@ -13,6 +13,7 @@ D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfi
 D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.runtimeconfig.dev.json
 D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.dll
 D:\Metrodata\ReimbursementParking\Data\bin\Debug\netcoreapp2.1\Data.pdb
+D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.csprojAssemblyReference.cache
 D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.csproj.CoreCompileInputs.cache
 D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfoInputs.cache
 D:\Metrodata\ReimbursementParking\Data\obj\Debug\netcoreapp2.1\Data.AssemblyInfo.cs
