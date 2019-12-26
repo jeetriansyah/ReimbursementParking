@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Client.Base;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +11,9 @@ namespace Client.Controllers
 {
     public class RolesController : Controller
     {
+        Port getPort = new Base.Port();
+        readonly HttpClient client = new HttpClient();
+
         // GET: Roles
         public ActionResult Index()
         {

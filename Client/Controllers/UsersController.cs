@@ -49,7 +49,7 @@ namespace Client.Controllers
             {
                 return View();
             }
-            return RedirectToAction(nameof(Login));
+            return RedirectToAction("Login","Users");
         }
 
         public ActionResult Login()
@@ -59,7 +59,7 @@ namespace Client.Controllers
             {
                 return View();
             }
-            return RedirectToAction(nameof(Login));
+            return RedirectToAction("Login", "Users");
         }
 
         [HttpPost]
