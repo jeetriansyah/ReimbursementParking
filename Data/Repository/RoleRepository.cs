@@ -31,10 +31,10 @@ namespace Data.Repository
             var delete = myContext.Roles.Find(Id);
             if (delete != null)
             {
-                delete.IsDelete = true;
-                delete.DeleteDate = DateTimeOffset.Now;
+                delete.Delete();
+                return myContext.SaveChanges();
             }
-            return myContext.SaveChanges();
+            return 0;
         }
 
         public IEnumerable<Role> Get()

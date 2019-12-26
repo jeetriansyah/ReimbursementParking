@@ -18,7 +18,7 @@ namespace API.Services
 
         public RoleService(IRoleRepository roleRepository)
         {
-            this._roleRepository = roleRepository;
+            _roleRepository = roleRepository;
         }
 
         public int Create(RoleVM roleVM)

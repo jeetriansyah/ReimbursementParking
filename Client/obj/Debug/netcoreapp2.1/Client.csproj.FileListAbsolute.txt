@@ -82,14 +82,14 @@ D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.Views.pd
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csproj.CopyComplete
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.pdb
-D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.dll
-D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.Views.dll
-D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Data.dll
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.deps.json
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.runtimeconfig.json
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.runtimeconfig.dev.json
+D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.dll
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.pdb
+D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.Views.dll
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Client.Views.pdb
+D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Data.dll
 D:\RIAN\Github\ReimbursementParking\Client\bin\Debug\netcoreapp2.1\Data.pdb
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csprojAssemblyReference.cache
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csproj.CoreCompileInputs.cache
@@ -108,6 +108,7 @@ D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\H
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
+D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Header.g.cshtml.cs
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Sidebar.g.cshtml.cs
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Profiles\Index.g.cshtml.cs
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Roles\Index.g.cshtml.cs
@@ -126,4 +127,3 @@ D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.Views.
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csproj.CopyComplete
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.pdb
-D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Header.g.cshtml.cs

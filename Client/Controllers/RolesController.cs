@@ -68,8 +68,8 @@ namespace Client.Controllers
         }
 
 
-// GET: Roles/Details/5
-public ActionResult Details(int id)
+        // GET: Roles/Details/5
+        public ActionResult Details(int id)
         {
             return View();
         }

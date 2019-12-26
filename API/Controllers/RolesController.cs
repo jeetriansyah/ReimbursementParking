@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using API.Services;
 using API.Services.Interface;
 using Data.Model;
+using Data.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,20 +36,38 @@ namespace API.Controllers
 
         // POST: api/Roles
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(RoleVM roleVM)
         {
+            var push = roleService.Create(roleVM);
+            if (push > 0)
+            {
+                return Ok("Successfully Added!");
+            }
+            return BadRequest("Added Row Failed!");
         }
 
         // PUT: api/Roles/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, RoleVM roleVM)
         {
+            var put = roleService.Update(id, roleVM);
+            if (put > 0)
+            {
+                return Ok("Update Sucessed!");
+            }
+            return BadRequest("Update Role Failed!");
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var delete = roleService.Delete(id);
+            if (delete > 0)
+            {
+                return Ok("Delete Successed!");
+            }
+            return BadRequest("Delete Failed!");
         }
     }
 }
