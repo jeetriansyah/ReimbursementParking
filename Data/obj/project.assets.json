@@ -4118,23 +4118,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Metrodata\\ReimbursementParking\\Data\\Data.csproj",
+      "projectUniqueName": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "D:\\Metrodata\\ReimbursementParking\\Data\\Data.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "D:\\Metrodata\\ReimbursementParking\\Data\\obj\\",
+      "projectPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\Data.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "D:\\RIAN\\Github\\ReimbursementParking\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
