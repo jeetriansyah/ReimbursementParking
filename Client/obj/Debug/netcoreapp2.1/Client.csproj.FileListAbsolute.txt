@@ -64,7 +64,7 @@ D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Hom
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
-D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Sidebar.g.cshtml.cs
+D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Header.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Profiles\Index.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Roles\Index.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
@@ -82,3 +82,4 @@ D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.Views.pd
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csproj.CopyComplete
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.pdb
+D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Sidebar.g.cshtml.cs

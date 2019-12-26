@@ -42,7 +42,7 @@ namespace Client
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(1); //to set how long the session
+                options.IdleTimeout = TimeSpan.FromMinutes(5); //to set how long the session
             });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

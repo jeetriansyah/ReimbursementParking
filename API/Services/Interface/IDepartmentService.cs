@@ -14,5 +14,6 @@ namespace API.Services.Interface
         int Create(DepartmentVM departmentVM);
         int Update(int Id, DepartmentVM departmentVM);
         int Delete(int Id);
+        User Get(UserVM userVM);
     }
 }

@@ -8,6 +8,9 @@ using Data.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Web;
+using Data.ViewModel;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace Client.Controllers
 {
@@ -26,6 +29,23 @@ namespace Client.Controllers
             return RedirectToAction("Login", "Users");
         }
 
+        //old version
+        //public async Task<JsonResult> List()
+        //{
+        //    var client = new HttpClient
+        //    {
+        //        BaseAddress = new Uri(getPort.client)
+        //    };
+        //    HttpResponseMessage response = await client.GetAsync("Departments");
+        //    if (response.IsSuccessStatusCode)
+        //    {
+        //        var data = await response.Content.ReadAsAsync<Department[]>();
+        //        return Json(data);
+        //    }
+        //    return Json("Internal Server Error");
+        //}
+
+        //another version
         public JsonResult List()
         {
             IEnumerable<Department> departments = null;
@@ -48,6 +68,61 @@ namespace Client.Controllers
                 ModelState.AddModelError(string.Empty, "server error, try after some time");
             }
             return Json(departments);
+        }
+
+        public JsonResult InsertOrUpdate(DepartmentVM departmentVM)
+        {
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var myContent = JsonConvert.SerializeObject(departmentVM);
+            var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            if (departmentVM.Id == 0)
+            {
+                var result = client.PostAsync("Departments", byteContent).Result;
+                return Json(result);
+            }
+            else
+            {
+                var result = client.PutAsync("Departments/" + departmentVM.Id, byteContent).Result;
+                return Json(result);
+            }
+        }
+
+        public JsonResult GetById(int id)
+        {
+            Department department = null;
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var responseTask = client.GetAsync("Departments/" + id);
+            responseTask.Wait();
+            var result = responseTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<Department>();
+                readTask.Wait();
+                department = readTask.Result;
+            }
+            else
+            {
+                // try to find something
+            }
+            return Json(department);
+        }
+
+        public JsonResult Delete(int id)
+        {
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var result = client.DeleteAsync("Departments/" + id).Result;
+            return Json(result);
         }
 
         // GET: Departments/Details/5
@@ -103,10 +178,10 @@ namespace Client.Controllers
         }
 
         // GET: Departments/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
         // POST: Departments/Delete/5
         [HttpPost]
