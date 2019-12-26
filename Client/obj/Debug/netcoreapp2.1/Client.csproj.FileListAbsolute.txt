@@ -126,3 +126,4 @@ D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.Views.
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.csproj.CopyComplete
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.dll
 D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Client.pdb
+D:\RIAN\Github\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Master\Header.g.cshtml.cs
