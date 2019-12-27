@@ -25,7 +25,7 @@ namespace Data.Model
             this.UpdateDate = DateTimeOffset.Now;
         }
 
-        public void Delete(RoleVM roleVM)
+        public void Delete()
         {
             this.IsDelete = true;
             this.DeleteDate = DateTimeOffset.Now;

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Services;
 using API.Services.Interface;
 using Data.Model;
+using Data.ViewModel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,38 +15,57 @@ namespace API.Controllers
     [ApiController]
     public class DepartmentsController : ControllerBase
     {
-        IDepartmentService departmentservice = new DepartmentService();
+        IDepartmentService departmentService = new DepartmentService();
+
         // GET: api/Departments
         [HttpGet]
         public IEnumerable<Department> Get()
         {
-            return departmentservice.Get();
+            return departmentService.Get();
             //return new string[] { "value1", "value2" };
         }
 
         // GET: api/Departments/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
-        {
-            return "value";
-        }
+        //[HttpGet("{id}", Name = "Get")]
+        //public string Get(int id)
+        //{
+        //    return "value";
+        //}
 
         // POST: api/Departments
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post(DepartmentVM departmentVM)
         {
+            var push = departmentService.Create(departmentVM);
+            if (push > 0)
+            {
+                return Ok("Successfully Added!");
+            }
+            return BadRequest("Added Row Failed!");
         }
 
         // PUT: api/Departments/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, DepartmentVM departmentVM)
         {
+            var put = departmentService.Update(id, departmentVM);
+            if (put > 0)
+            {
+                return Ok("Update Sucessed!");
+            }
+            return BadRequest("Update Role Failed!");
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            var delete = departmentService.Delete(id);
+            if (delete > 0)
+            {
+                return Ok("Delete Successed!");
+            }
+            return BadRequest("Delete Failed!");
         }
     }
 }

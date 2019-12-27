@@ -7,6 +7,6 @@ namespace Client.Base
 {
     public class Port
     {
-        public string client = "https://localhost:44370/api/";
+        public string client = "https://localhost:44370/API/";
     }
 }

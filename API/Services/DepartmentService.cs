@@ -12,15 +12,13 @@ namespace API.Services
 {
     public class DepartmentService : IDepartmentService
     {
-        private IDepartmentRepository departmentRepository = new DepartmentRepository();
+        private IDepartmentRepository _departmentRepository = new DepartmentRepository();
 
-        public DepartmentService()
-        {
-        }
+        public DepartmentService() { }
 
         public DepartmentService(IDepartmentRepository departmentRepository)
         {
-            this.departmentRepository = departmentRepository;
+            _departmentRepository = departmentRepository;
         }
 
         public int Create(DepartmentVM departmentVM)
@@ -31,9 +29,8 @@ namespace API.Services
             }
             else
             {
-                return departmentRepository.Create(departmentVM);
+                return _departmentRepository.Create(departmentVM);
             }
-            //throw new NotImplementedException();
         }
 
         public int Delete(int Id)
@@ -44,26 +41,18 @@ namespace API.Services
             }
             else
             {
-                return departmentRepository.Delete(Id);
+                return _departmentRepository.Delete(Id);
             }
-            //throw new NotImplementedException();
         }
 
         public IEnumerable<Department> Get()
         {
-            return departmentRepository.Get();
-            //throw new NotImplementedException();
+            return _departmentRepository.Get();
         }
 
         public Department Get(int Id)
         {
-            return departmentRepository.Get(Id);
-            //throw new NotImplementedException();
-        }
-
-        public User Get(UserVM userVM)
-        {
-            throw new NotImplementedException();
+            return _departmentRepository.Get(Id);
         }
 
         public int Update(int Id, DepartmentVM departmentVM)
@@ -74,9 +63,8 @@ namespace API.Services
             }
             else
             {
-                return departmentRepository.Update(Id, departmentVM);
+                return _departmentRepository.Update(Id, departmentVM);
             }
-            //throw new NotImplementedException();
         }
     }
 }

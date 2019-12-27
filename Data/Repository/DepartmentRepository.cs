@@ -12,44 +12,42 @@ namespace Data.Repository
     public class DepartmentRepository : IDepartmentRepository
     {
         MyContext myContext = new MyContext();
+
         public int Create(DepartmentVM departmentVM)
         {
+            var department = myContext.Departments.Where(d => d.DepartmentName == departmentVM.DepartmentName);
+            var result = 0;
+            if (department != null)
             {
-                var department = myContext.Departments.Where(d => d.DepartmentName.ToLower() == departmentVM.DepartmentName);
-                var result = 0;
-                if (department != null)
-                {
-                    var push = new Department(departmentVM);
-                    myContext.Departments.Add(push);
-                    return myContext.SaveChanges();
-                }
-                return result;
+                var push = new Department(departmentVM);
+                myContext.Departments.Add(push);
+                return myContext.SaveChanges();
             }
-            //throw new NotImplementedException();
+            return result;
         }
 
         public int Delete(int Id)
         {
             var delete = myContext.Departments.Find(Id);
-            if(delete != null)
+            if (delete != null)
             {
-                delete.IsDelete = true;
-                delete.DeleteDate = DateTimeOffset.Now;
+                delete.Delete();
+                return myContext.SaveChanges();
             }
-            return myContext.SaveChanges();
+            return 0;
             //throw new NotImplementedException();
         }
 
         public IEnumerable<Department> Get()
         {
             //throw new NotImplementedException();
-            return myContext.Departments.Where(d => d.IsDelete == false).ToList().OrderByDescending(d => d.Id);
+            return myContext.Departments.Where(d => d.IsDelete == false).ToList().OrderByDescending(r => r.Id);
         }
 
         public Department Get(int Id)
         {
-            //throw new NotImplementedException();
             return myContext.Departments.Find(Id);
+            //throw new NotImplementedException();
         }
 
         public int Update(int Id, DepartmentVM departmentVM)

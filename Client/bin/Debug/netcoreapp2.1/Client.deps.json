@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "c5273a244a69a44609cb7a2380537ec5a999cc7b"
+    "signature": "a8f1f2f0b0199b4bfdc0c66860be498b01121629"
   },
   "compilationOptions": {
     "defines": [
@@ -28,34 +28,13 @@
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.NETCore.App": "2.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9",
-          "bootstrap": "4.4.1",
-          "jQuery": "3.4.1",
-          "jQuery.Validation": "1.19.1",
-          "jquery.datatables": "1.10.15"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.9"
         },
         "runtime": {
           "Client.dll": {}
         },
         "compile": {
           "Client.dll": {}
-        }
-      },
-      "bootstrap/4.4.1": {
-        "dependencies": {
-          "jQuery": "3.4.1",
-          "popper.js": "1.16.0"
-        }
-      },
-      "jQuery/3.4.1": {},
-      "jquery.datatables/1.10.15": {
-        "dependencies": {
-          "jQuery": "3.4.1"
-        }
-      },
-      "jQuery.Validation/1.19.1": {
-        "dependencies": {
-          "jQuery": "3.4.1"
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
@@ -443,7 +422,6 @@
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
         }
       },
-      "popper.js/1.16.0": {},
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -3543,34 +3521,6 @@
       "serviceable": false,
       "sha512": ""
     },
-    "bootstrap/4.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/QO9//Z8IYv8VmxTS3VzLaQC3wYnJDNbACnZHgLEeMABYjNuVPToLa6VDP2S4KwU3gUFiXglhQYZ00cddSK0IQ==",
-      "path": "bootstrap/4.4.1",
-      "hashPath": "bootstrap.4.4.1.nupkg.sha512"
-    },
-    "jQuery/3.4.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vDD5O2nuVN2rF0rTASFSJNM5ef50niEP5HsXDQyXPPZH1rBaAaLtCutHG5wvXOPmrQw+MEZHOcOk9kYmdnL/Xw==",
-      "path": "jquery/3.4.1",
-      "hashPath": "jquery.3.4.1.nupkg.sha512"
-    },
-    "jquery.datatables/1.10.15": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9zRZ5zYafJHOwLU6sWoTM/agRx/dlu0HGQpGD/hEvqSEUJhSQjqJNTq77I97B+LCbh4eJrmNDS9PENiYY+0Isg==",
-      "path": "jquery.datatables/1.10.15",
-      "hashPath": "jquery.datatables.1.10.15.nupkg.sha512"
-    },
-    "jQuery.Validation/1.19.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-vxIiGOMV4v+pXmv3gZ+MVuOwrnWGC4BQe7cy7GdhiJ3LkWiA7LRVz97q7WJf7KndYtld5zcuaJtGm0ATWKD/fQ==",
-      "path": "jquery.validation/1.19.1",
-      "hashPath": "jquery.validation.1.19.1.nupkg.sha512"
-    },
     "Microsoft.AspNetCore.Razor.Design/2.1.2": {
       "type": "package",
       "serviceable": true,
@@ -3724,13 +3674,6 @@
       "sha512": "sha512-erkYG/OW1LloSwDFGeS9MvVjy1FLmaV3k8GK/GMR8D3sSDEylZogoLdLiaOFc92+zTen92rG6XGiioNacSlg0A==",
       "path": "pomelo.jsonobject/1.1.1",
       "hashPath": "pomelo.jsonobject.1.1.1.nupkg.sha512"
-    },
-    "popper.js/1.16.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZJhaIouJ7dztoRoqj+KA1ADGpEIr+MzCWOkKm/Q6tu3CAauSsc+ZzXsxsD6RClRwieacqE3QNYNpaLU/mkVnWg==",
-      "path": "popper.js/1.16.0",
-      "hashPath": "popper.js.1.16.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

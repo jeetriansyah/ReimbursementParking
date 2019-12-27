@@ -29,23 +29,6 @@ namespace Client.Controllers
             return RedirectToAction("Login", "Users");
         }
 
-        //old version
-        //public async Task<JsonResult> List()
-        //{
-        //    var client = new HttpClient
-        //    {
-        //        BaseAddress = new Uri(getPort.client)
-        //    };
-        //    HttpResponseMessage response = await client.GetAsync("Departments");
-        //    if (response.IsSuccessStatusCode)
-        //    {
-        //        var data = await response.Content.ReadAsAsync<Department[]>();
-        //        return Json(data);
-        //    }
-        //    return Json("Internal Server Error");
-        //}
-
-        //another version
         public JsonResult List()
         {
             IEnumerable<Department> departments = null;
