@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Controllers\ForgotController.cs" />
-    <Compile Remove="Controllers\ProfilesController.cs" />
-    <Compile Remove="Controllers\RolesController.cs" />
-    <Compile Remove="Controllers\UsersController.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />

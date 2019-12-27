@@ -41,7 +41,7 @@ namespace Data.Repository
         public IEnumerable<Department> Get()
         {
             //throw new NotImplementedException();
-            return myContext.Departments.Where(d => d.IsDelete == false).ToList().OrderByDescending(r => r.Id);
+            return myContext.Departments.Where(d => d.IsDelete == false).ToList();
         }
 
         public Department Get(int Id)

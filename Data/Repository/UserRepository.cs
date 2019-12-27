@@ -15,23 +15,44 @@ namespace Data.Repository
         MyContext myContext = new MyContext();
         public int Create(UserVM userVM)
         {
-            throw new NotImplementedException();
+            var user = myContext.Users.Where(u => u.FirstName.ToLower() == userVM.FirstName.ToLower() || u.LastName.ToLower() == userVM.LastName.ToLower());
+            var result = 0;
+            if (user != null)
+            {
+                var push = new User(userVM);
+                push.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();
+                push.Department = myContext.Departments.Where(d => d.Id == userVM.Department).FirstOrDefault();
+                myContext.Users.Add(push);
+                return myContext.SaveChanges();
+            }
+            return result;
+            //throw new NotImplementedException();
         }
 
         public int Delete(int Id)
         {
-            throw new NotImplementedException();
+            var delete = myContext.Departments.Find(Id);
+            if (delete != null)
+            {
+                delete.IsDelete = true;
+                delete.DeleteDate = DateTimeOffset.Now;
+            }
+            return myContext.SaveChanges();
+            //throw new NotImplementedException();
         }
 
         public IEnumerable<User> Get()
         {
-            return myContext.Users.ToList();
+            var sup = myContext.Users.Include("Role").Include("Department").Where(i => i.IsDelete == false);
+            return sup;
+            //return myContext.Users.ToList();
             //throw new NotImplementedException();
         }
 
         public User Get(int Id)
         {
-            throw new NotImplementedException();
+            return myContext.Users.Find(Id);
+            //throw new NotImplementedException();
         }
 
         public User Get(UserVM userVM)
@@ -42,7 +63,12 @@ namespace Data.Repository
 
         public int Update(int Id, UserVM userVM)
         {
-            throw new NotImplementedException();
+            var update = myContext.Users.Find(Id);
+            update.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();
+            update.Department = myContext.Departments.Where(d => d.Id == userVM.Department).FirstOrDefault();
+            update.Update(userVM);
+            return myContext.SaveChanges();
+            //throw new NotImplementedException();
         }
     }
 }

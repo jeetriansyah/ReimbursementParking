@@ -10,19 +10,19 @@ namespace Data.Model
     {
         [Key]
         public string Id { get; set; }
-        public string Username { get; set; }
+        public string Email { get; set; }
         public string Password { get; set; }
 
         public Authorization() { }
 
         public Authorization(AuthorizationVM authorizationVM)
         {
-            this.Username = authorizationVM.Username;
+            this.Email = authorizationVM.Email;
             this.Password = authorizationVM.Password;
         }
         public void Update(AuthorizationVM authorizationVM)
         {
-            this.Username = authorizationVM.Username;
+            this.Email = authorizationVM.Email;
             this.Password = authorizationVM.Password;
         }
     }
