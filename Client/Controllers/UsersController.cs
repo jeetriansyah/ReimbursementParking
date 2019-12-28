@@ -64,24 +64,31 @@ namespace Client.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(AuthorizationVM authorizationVM)
+        public ActionResult Login(string Email, string Password)
         {
             try
             {
-                var myContent = JsonConvert.SerializeObject(authorizationVM);
-                var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
-                var byteContent = new ByteArrayContent(buffer);
-                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                var result = client.PostAsync("Authorizations", byteContent).Result;
+                Authorization userCredential = null;
+                var client = new HttpClient
+                {
+                    BaseAddress = new Uri(getPort.client)
+                };
+                var responseTask = client.GetAsync("Authorizations/" + Email + "/" + Password);
+                responseTask.Wait();
+                var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var data = result.Content.ReadAsAsync<Authorization>();
-                    data.Wait();
-                    var auth = data.Result;
-                    HttpContext.Session.SetString("Id", auth.Id);
+                    var readTask = result.Content.ReadAsAsync<Authorization>();
+                    readTask.Wait();
+                    userCredential = readTask.Result;
+                    HttpContext.Session.SetString("Id", userCredential.Id);
                     return RedirectToAction(nameof(Index));
                 }
-                return View();
+                else
+                {
+                    // try to find something
+                }
+                return Json(result);
             }
             catch
             {

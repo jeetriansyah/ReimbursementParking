@@ -102,14 +102,14 @@
                                 <div class="table-responsive">
                                     <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                         <div class="col-sm-12">
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button> <br /><br />
                                             <div class="modal fade" id="myModal" role="dialog">
                                                 <div class="modal-dialog">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Create New Supplier</h4>
+                                                            <h4 class="modal-title" style="position:fixed;">Create New Supplier</h4>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="container">
@@ -319,7 +319,6 @@
         }
 
         function GetbyId(id) {
-            //$('#departmentName');
             $.ajax({
                 url: "/Departments/GetbyId",
                 type: "GET",

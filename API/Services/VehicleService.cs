@@ -50,9 +50,9 @@ namespace API.Services
             return _vehicleRepository.Get();
         }
 
-        public Vehicle Get(int id)
+        public Vehicle Get(int Id)
         {
-            return _vehicleRepository.Get(id);
+            return _vehicleRepository.Get(Id);
         }
 
         public int Update(int Id, VehicleVM vehicleVM)
