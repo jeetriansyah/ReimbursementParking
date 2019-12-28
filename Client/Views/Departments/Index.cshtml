@@ -245,7 +245,7 @@
         }
 
         function Save() {
-            if ($('#departmentName').val() === 0) {
+            if ($('#departmentName').val() == 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -263,13 +263,14 @@
                     data: Department
                 }).then((result) => {
                     //debugger;
-                    if (result.statusCode === 200) {
+                    if (result.statusCode == 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
                             title: 'Insert Successfully'
                         });
-                        ResetTable();
+                        //ResetTable();
+                        window.location.href = "/Departments";
                     }
                     else {
                         Swal.fire('Error', 'Insert Fail', 'error');
@@ -280,7 +281,7 @@
         }
 
         function Update() {
-            if ($('#departmentName').val() === 0) {
+            if ($('#departmentName').val() == 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -299,7 +300,7 @@
                 }).then((result) => {
                     //debugger;
                     $('#myModal').hide();
-                    if (result.statusCode === 200) {
+                    if (result.statusCode == 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
@@ -307,7 +308,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        ResetTable();
+                        window.location.href = "/Departments";
                     }
                     else {
                         Swal.fire('Error', 'Update Fail', 'error');
@@ -379,7 +380,7 @@
                                 type: 'success',
                                 title: 'Delete Successfully'
                             });
-                            ResetTable();
+                            window.location.href = "/Departments";
                         }
                         else {
                             Swal.fire('Error', 'Failed to Delete', 'error');
