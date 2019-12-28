@@ -24,7 +24,7 @@ namespace Data.Model
             this.UpdateDate = DateTimeOffset.Now;
         }
 
-        public void Delete(DepartmentVM departmentVM)
+        public void Delete()
         {
             this.IsDelete = true;
             this.DeleteDate = DateTimeOffset.Now;
