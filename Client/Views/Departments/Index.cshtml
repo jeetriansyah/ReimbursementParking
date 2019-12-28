@@ -245,7 +245,7 @@
         }
 
         function Save() {
-            if ($('#DepartmentName').val() === 0) {
+            if ($('#departmentName').val() === 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -256,14 +256,14 @@
             } else {
                 var Department = new Object();
                 Department.id = $('#Id').val();
-                Department.departmentName = $('#DepartmentName').val();
+                Department.departmentName = $('#departmentName').val();
                 $.ajax({
                     type: 'POST',
                     url: '/Departments/InsertOrUpdate/',
                     data: Department
                 }).then((result) => {
                     //debugger;
-                    if (result.StatusCode === 200) {
+                    if (result.statusCode === 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
@@ -299,7 +299,7 @@
                 }).then((result) => {
                     //debugger;
                     $('#myModal').hide();
-                    if (result.StatusCode === 200) {
+                    if (result.statusCode === 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
@@ -367,11 +367,13 @@
                     //debugger;
                     $.ajax({
                         url: "/Departments/Delete/",
-                        type: "POST",
-                        data: { id: id }
+                        type: "Get",
+                        //contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        data: { id: id },
                     }).then((result) => {
-                        //debugger;
-                        if (result.StatusCode === 200) {
+                        debugger;
+                        if (result.statusCode == 200) {
                             Swal.fire({
                                 position: 'center',
                                 type: 'success',
@@ -380,7 +382,7 @@
                             ResetTable();
                         }
                         else {
-                            Swal.fire('Error', 'Update Fail', 'error');
+                            Swal.fire('Error', 'Failed to Delete', 'error');
                             ClearScreen();
                         }
                     });

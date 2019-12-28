@@ -13,17 +13,19 @@ namespace Data.Model
         public string Email { get; set; }
         public string Password { get; set; }
 
-        //public Authorization() { }
+        public Authorization() { }
 
-        //public Authorization(AuthorizationVM authorizationVM)
-        //{
-        //    this.Email = authorizationVM.Email;
-        //    this.Password = authorizationVM.Password;
-        //}
-        //public void Update(AuthorizationVM authorizationVM)
-        //{
-        //    this.Email = authorizationVM.Email;
-        //    this.Password = authorizationVM.Password;
-        //}
+        public Authorization(AuthorizationVM authorizationVM)
+        {
+            this.Id = authorizationVM.Id;
+            this.Email = authorizationVM.Email;
+            this.Password = authorizationVM.Password;
+        }
+        public void Update(AuthorizationVM authorizationVM)
+        {
+            this.Id = authorizationVM.Id;
+            this.Email = authorizationVM.Email;
+            this.Password = authorizationVM.Password;
+        }
     }
 }
