@@ -26,7 +26,7 @@ namespace API.Controllers
         }
 
         // GET: api/Departments/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetDepartments")]
         public IActionResult Get(int id)
         {
             var get = departmentService.Get(id);

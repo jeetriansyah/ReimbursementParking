@@ -32,29 +32,51 @@ namespace API.Controllers
         }
 
         // GET: api/Users/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpGet("{id}", Name = "GetUsers")]
+        public IActionResult Get(string Id)
+        {
+            var get = userservice.Get(Id);
+            if (get != null)
+            {
+                return Ok(get);
+            }
+            return BadRequest("Added Row Failed!");
+        }
 
         // POST: api/Users
         [HttpPost]
-        public User Post(UserVM userVM)
+        public IActionResult Post(UserVM userVM)
         {
-            return userservice.Get(userVM);
+            var push = userservice.Create(userVM);
+            if (push > 0)
+            {
+                return Ok("Successfully Added!");
+            }
+            return BadRequest("Added Row Failed!");
         }
 
         // PUT: api/Users/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(string id, UserVM userVM)
         {
+            var put = userservice.Update(id, userVM);
+            if (put > 0)
+            {
+                return Ok("Update Sucessed!");
+            }
+            return BadRequest("Update Role Failed!");
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(string id)
         {
+            var delete = userservice.Delete(id);
+            if (delete > 0)
+            {
+                return Ok("Delete Successed!");
+            }
+            return BadRequest("Delete Failed!");
         }
     }
 }

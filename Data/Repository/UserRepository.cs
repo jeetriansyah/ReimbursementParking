@@ -41,6 +41,11 @@ namespace Data.Repository
             //throw new NotImplementedException();
         }
 
+        public int Delete(string Id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<User> Get()
         {
             var sup = myContext.Users.Include("Role").Include("Department").Where(i => i.IsDelete == false);
@@ -49,7 +54,7 @@ namespace Data.Repository
             //throw new NotImplementedException();
         }
 
-        public User Get(int Id)
+        public User Get(string Id)
         {
             return myContext.Users.Find(Id);
             //throw new NotImplementedException();
@@ -61,7 +66,17 @@ namespace Data.Repository
             return myContext.Users.FromSql($"call SP_UserLogin({userVM.Email},{userVM.Password})").SingleOrDefault();
         }
 
-        public int Update(int Id, UserVM userVM)
+        //public int Update(int Id, UserVM userVM)
+        //{
+        //    var update = myContext.Users.Find(Id);
+        //    update.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();
+        //    update.Department = myContext.Departments.Where(d => d.Id == userVM.Department).FirstOrDefault();
+        //    update.Update(userVM);
+        //    return myContext.SaveChanges();
+        ////    throw new NotImplementedException();
+        //}
+
+        public int Update(string Id, UserVM userVM)
         {
             var update = myContext.Users.Find(Id);
             update.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();

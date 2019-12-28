@@ -82,12 +82,12 @@ using Client.Models;
                 ");
             EndContext();
             BeginContext(798, 1071, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "60de4a2637014e4088dc05c1c8c1e498", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b89797995b444b468ab9791ff0a1c0b5", async() => {
                 BeginContext(856, 250, true);
                 WriteLiteral("\n                    <!-- Logo icon -->\n                    <b class=\"logo-icon\">\n                        <!--You can put here icon as well // <i class=\"wi wi-sunset\"></i> //-->\n                        <!-- Dark Logo icon -->\n                        ");
                 EndContext();
                 BeginContext(1106, 82, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cfbb434d847b4609a99c8bd2c0d1d306", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cc6404d38001410786751331788f8d2c", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -107,7 +107,7 @@ using Client.Models;
                 WriteLiteral("\n                        <!-- Light Logo icon -->\n                        ");
                 EndContext();
                 BeginContext(1262, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d6ddb7ba61ca4a33b867b03fa8b3bbfe", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "422e10da92a34cfe9a1cef0b8416b0ba", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -127,7 +127,7 @@ using Client.Models;
                 WriteLiteral("\n                    </b>\n                    <!--End Logo icon -->\n                    <!-- Logo text -->\n                    <span class=\"logo-text\">\n                        <!-- dark Logo text -->\n                        ");
                 EndContext();
                 BeginContext(1575, 82, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7c459d5a1a2b431694c5138975401bd6", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d4b6222c28d94057b090debeb07cb235", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -147,7 +147,7 @@ using Client.Models;
                 WriteLiteral("\n                        <!-- Light Logo text -->\n                        ");
                 EndContext();
                 BeginContext(1731, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "eb10b2b1d8b24e3abd66fd11fcd87d93", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9de41af3c13f45e095fe31534f16067f", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -220,7 +220,7 @@ using Client.Models;
             WriteLiteral("======== -->\n                <li class=\"nav-item dropdown\">\n                    ");
             EndContext();
             BeginContext(3997, 219, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9997326ae4ee4617b9acd0fb9cc62f53", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16cb00c52c52455daf0bf625b53daecb", async() => {
                 BeginContext(4119, 93, true);
                 WriteLiteral("\n                        <i class=\"ti-power-off m-r-5 m-l-5\"></i> Logout\n                    ");
                 EndContext();

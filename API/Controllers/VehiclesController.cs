@@ -26,7 +26,7 @@ namespace API.Controllers
         }
 
         // GET: api/Vehicles/5
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetVehicles")]
         public IActionResult Get(int id)
         {
             var get = vehicleService.Get(id);
