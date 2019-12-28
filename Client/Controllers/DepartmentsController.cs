@@ -21,12 +21,12 @@ namespace Client.Controllers
         // GET: Departments
         public ActionResult Index()
         {
-            var Id = HttpContext.Session.GetString("Id");
-            if (Id != null)
-            {
+            //var Id = HttpContext.Session.GetString("Id");
+            //if (Id != null)
+            //{
                 return View(List());
-            }
-            return RedirectToAction("Login", "Users");
+            //}
+            //return RedirectToAction("Login", "Users");
         }
 
         public JsonResult List()

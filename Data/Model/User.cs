@@ -2,19 +2,24 @@
 using Data.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Data.Model
 {
-    public class User : BaseModel
+    public class User
     {
+        [Key]
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public bool IsDelete { get; set; }
+        public DateTimeOffset CreateDate { get; set; }
+        public Nullable<DateTimeOffset> UpdateDate { get; set; }
+        public Nullable<DateTimeOffset> DeleteDate { get; set; }
         public Role Role { get; set; }
         public Department Department { get; set; }
-        public User Manager { get; set; }
+        public string Manager { get; set; }
 
         public User()
         {
@@ -25,8 +30,6 @@ namespace Data.Model
         {
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
-            this.Email = userVM.Email;
-            this.Password = userVM.Password;
             this.CreateDate = DateTimeOffset.Now;
             this.IsDelete = false;
         }
@@ -34,8 +37,6 @@ namespace Data.Model
         {
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
-            this.Email = userVM.Email;
-            this.Password = userVM.Password;
             this.UpdateDate = DateTimeOffset.Now;
         }
 

@@ -27,12 +27,17 @@ namespace API.Controllers
             return roleService.Get();
         }
 
-        // GET: api/Roles/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        //GET: api/Roles/5
+        [HttpGet("{id}", Name = "GetRoles")]
+        public IActionResult Get(int id)
+        {
+            var get = roleService.Get(id);
+            if (get != null)
+            {
+                return Ok(get);
+            }
+            return BadRequest("Get Data Failed!");
+        }
 
         // POST: api/Roles
         [HttpPost]

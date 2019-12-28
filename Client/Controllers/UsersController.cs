@@ -44,12 +44,12 @@ namespace Client.Controllers
 
         public ActionResult Index()
         {
-            var Id = HttpContext.Session.GetString("Id");
-            if (Id != null)
-            {
+            //var Id = HttpContext.Session.GetString("Id");
+            //if (Id != null)
+            //{
                 return View();
-            }
-            return RedirectToAction(nameof(Login));
+            //}
+            //return RedirectToAction(nameof(Login));
         }
 
         public ActionResult Login()
@@ -64,24 +64,31 @@ namespace Client.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(UserVM userVM)
+        public ActionResult Login(string Email, string Password)
         {
             try
             {
-                var myContent = JsonConvert.SerializeObject(userVM);
-                var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
-                var byteContent = new ByteArrayContent(buffer);
-                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-                var result = client.PostAsync("Users", byteContent).Result;
+                Authorization userCredential = null;
+                var client = new HttpClient
+                {
+                    BaseAddress = new Uri(getPort.client)
+                };
+                var responseTask = client.GetAsync("Authorizations/" + Email + "/" + Password);
+                responseTask.Wait();
+                var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var data = result.Content.ReadAsAsync<User>();
-                    data.Wait();
-                    var user = data.Result;
-                    HttpContext.Session.SetString("Id", user.Id.ToString());
+                    var readTask = result.Content.ReadAsAsync<Authorization>();
+                    readTask.Wait();
+                    userCredential = readTask.Result;
+                    HttpContext.Session.SetString("Id", userCredential.Id);
                     return RedirectToAction(nameof(Index));
                 }
-                return View();
+                else
+                {
+                    // try to find something
+                }
+                return Json(result);
             }
             catch
             {

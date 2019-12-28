@@ -18,6 +18,7 @@ namespace Data.Context
         public DbSet<Transaction> Transactions { get; set; }
         public DbSet<TransactionDetail> TransactionDetails { get; set; }
         public DbSet<Parameter> Parameters { get; set; }
+        public DbSet<Authorization> Authorizations { get; set; }
 
         public MyContext() { }
 

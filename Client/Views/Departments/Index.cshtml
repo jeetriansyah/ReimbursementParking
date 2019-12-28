@@ -102,14 +102,14 @@
                                 <div class="table-responsive">
                                     <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                                         <div class="col-sm-12">
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button> <br /><br />
                                             <div class="modal fade" id="myModal" role="dialog">
                                                 <div class="modal-dialog">
                                                     <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Create New Supplier</h4>
+                                                            <h4 class="modal-title" style="position:fixed;">Create New Supplier</h4>
                                                         </div>
                                                         <div class="modal-body">
                                                             <div class="container">
@@ -120,11 +120,7 @@
                                                                     </div>
                                                                     <div class="form-group">
                                                                         <label for="Name">Name:</label>
-                                                                        <input type="text" class="form-control" id="Name" placeholder="Enter Name" name="Name">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="Email">Email:</label>
-                                                                        <input type="email" class="form-control" id="Email" placeholder="Enter Email" name="Email">
+                                                                        <input type="text" class="form-control" id="departmentName" placeholder="Enter Department Name" name="departmentName">
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -210,6 +206,7 @@
     <script src="~/datatables/datatable-basic.init.js"></script>
     <script src="~/datatables/datatable-basic.init.js"></script>
     <script src="~/datatables/bootstrap.js"></script>
+    <script src="~/datatables/sweetalert2@9.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#departments').dataTable({
@@ -233,8 +230,8 @@
                     $.each(result, function (key, Department) {
                         html += '<tr>';
                         html += '<td>' + Department.departmentName + '</td>';
-                        html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetbyId(' + Department.Id + ')">Edit</button> ';
-                        html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Department.Id + ')" >Delete</button ></td > ';
+                        html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetbyId(' + Department.id + ')">Edit</button> ';
+                        html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Department.id + ')" >Delete</button ></td > ';
                         html += '</tr>';
                         html += '</tr>';
                         html += '</tr>';
@@ -248,7 +245,7 @@
         }
 
         function Save() {
-            if ($('#DepartmentName').val() === 0) {
+            if ($('#departmentName').val() == 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -258,21 +255,22 @@
                 });
             } else {
                 var Department = new Object();
-                Department.Id = $('#Id').val();
-                Department.Name = $('#DepartmentName').val();
+                Department.id = $('#Id').val();
+                Department.departmentName = $('#departmentName').val();
                 $.ajax({
                     type: 'POST',
                     url: '/Departments/InsertOrUpdate/',
                     data: Department
                 }).then((result) => {
                     //debugger;
-                    if (result.StatusCode === 200) {
+                    if (result.statusCode == 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
                             title: 'Insert Successfully'
                         });
-                        ResetTable();
+                        //ResetTable();
+                        window.location.href = "/Departments";
                     }
                     else {
                         Swal.fire('Error', 'Insert Fail', 'error');
@@ -283,7 +281,7 @@
         }
 
         function Update() {
-            if ($('#Name').val() === 0) {
+            if ($('#departmentName').val() == 0) {
                 Swal.fire({
                     position: 'center',
                     type: 'error',
@@ -294,16 +292,15 @@
             } else {
                 //debugger;
                 var data = new Object();
-                data.Id = $('#Id').val();
-                data.Name = $('#Name').val();
-                data.Email = $('#Email').val();
+                data.id = $('#Id').val();
+                data.departmentName = $('#departmentName').val();
                 $.ajax({
                     url: "/Departments/InsertOrUpdate/",
                     data: data
                 }).then((result) => {
                     //debugger;
                     $('#myModal').hide();
-                    if (result.StatusCode === 200) {
+                    if (result.statusCode == 200) {
                         Swal.fire({
                             position: 'center',
                             type: 'success',
@@ -311,7 +308,7 @@
                             showConfirmButton: false,
                             timer: 1500
                         });
-                        ResetTable();
+                        window.location.href = "/Departments";
                     }
                     else {
                         Swal.fire('Error', 'Update Fail', 'error');
@@ -321,19 +318,17 @@
             }
         }
 
-        function GetbyId(Id) {
-            //debugger;
-            $('#DepartmentName');
+        function GetbyId(id) {
             $.ajax({
-                url: "/Departments/GetbyId/" + Id,
+                url: "/Departments/GetbyId",
                 type: "GET",
                 contentType: "application/json;charset=UTF-8",
                 dataType: "json",
-                async: false,
+                data: { id: id },
                 success: function (result) {
-                    const obj = JSON.parse(result);
-                    $('#Id').val(obj.Id);
-                    $('#DepartmentName').val(obj.Name);
+                    debugger;
+                    $('#Id').val(result.id);
+                    $('#departmentName').val(result.departmentName);
                     $('#myModal').modal('show');
                     $('#Update').show();
                     $('#Save').hide();
@@ -347,7 +342,7 @@
 
         function ClearScreen() {
             $('#Id').val('');
-            $('#DepartmentName').val('');
+            $('#departmentName').val('');
             $('#Update').hide();
             $('#Save').show();
         }
@@ -359,7 +354,7 @@
             });
         }
 
-        function Delete(Id) {
+        function Delete(id) {
             Swal.fire({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",
@@ -372,20 +367,22 @@
                     //debugger;
                     $.ajax({
                         url: "/Departments/Delete/",
-                        type: "POST",
-                        data: { id: Id }
+                        type: "Get",
+                        //contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        data: { id: id },
                     }).then((result) => {
-                        //debugger;
-                        if (result.StatusCode === 200) {
+                        debugger;
+                        if (result.statusCode == 200) {
                             Swal.fire({
                                 position: 'center',
                                 type: 'success',
                                 title: 'Delete Successfully'
                             });
-                            ResetTable();
+                            window.location.href = "/Departments";
                         }
                         else {
-                            Swal.fire('Error', 'Update Fail', 'error');
+                            Swal.fire('Error', 'Failed to Delete', 'error');
                             ClearScreen();
                         }
                     });

@@ -1,0 +1,394 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Login/assets/images/favicon.png">
+    <title>Nice admin Template - The Ultimate Multipurpose admin template</title>
+    <!-- Custom CSS -->
+    <link href="~/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/datatables/responsive.dataTables.min.css">
+    <!-- Custom CSS -->
+    <link href="~/Login/dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-navbarbg="skin6" data-theme="light" data-layout="vertical" data-sidebartype="full" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <div id="navigation">
+            @Html.Partial("~/Views/Master/Header.cshtml")
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <div id="navigation">
+            @Html.Partial("~/Views/Master/Sidebar.cshtml")
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-5 align-self-center">
+                        <h4 class="page-title">Basic Table</h4>
+                    </div>
+                    <div class="col-7 align-self-center">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="#">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Basic Table</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+                                        <div class="col-sm-12">
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal" onclick="ClearScreen();">Create New</button> <br /><br />
+                                            <div class="modal fade" id="myModal" role="dialog">
+                                                <div class="modal-dialog">
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title" style="position:fixed;">Create New Supplier</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container">
+                                                                <form>
+                                                                    <div class="form-group" hidden="hidden">
+                                                                        <label for="Id">Id:</label>
+                                                                        <input type="text" class="form-control" id="Id" name="Id">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="Name">Name:</label>
+                                                                        <input type="text" class="form-control" id="vehicleName" placeholder="Enter Vehicle Name" name="vehicleName">
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-success" data-dismiss="modal" id="Save" onclick="Save();">Submit</button>
+                                                            <button type="button" class="btn btn-warning" data-dismiss="modal" id="Update" onclick="Update();">Update</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <table id="vehicles" class="table table-striped table-bordered dataTable" role="grid" aria-describedby="zero_config_info">
+                                                <thead>
+                                                    <tr role="row">
+                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" style="width: 0px;" aria-sort="ascending">Name</th>
+                                                        <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 0px;">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="vehiclesbody" />
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- .right-sidebar -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center">
+            All Rights Reserved by Nice admin. Designed and Developed by
+            <a href="https://wrappixel.com">WrapPixel</a>.
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="~/Login/assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/Login/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="~/Login/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="~/datatables/app.min.js"></script>
+    <script src="~/datatables/app.init.js"></script>
+    <script src="~/datatables/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../../../datatables/perfect-scrollbar.jquery.min.js"></script>
+    <script src="~/Login/assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="~/Login/dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="~/Login/dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="~/Login/dist/js/custom.min.js"></script>
+    <script src="~/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/datatables/datatable-basic.init.js"></script>
+    <script src="~/datatables/datatable-basic.init.js"></script>
+    <script src="~/datatables/bootstrap.js"></script>
+    <script src="~/datatables/sweetalert2@9.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#vehicles').dataTable({
+                "columnDefs": [{
+                    "orderable": false,
+                    "targets": 1
+                }],
+                "ajax": loadDataVehicles(),
+                "responsive": true
+            });
+        });
+        function loadDataVehicles() {
+            $.ajax({
+                url: "/Vehicles/List",
+                type: "GET",
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                async: false,
+                success: function (result) {
+                    var html = '';
+                    $.each(result, function (key, Vehicle) {
+                        html += '<tr>';
+                        html += '<td>' + Vehicle.vehicleType + '</td>';
+                        html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetbyId(' + Vehicle.id + ')">Edit</button> ';
+                        html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Vehicle.id + ')" >Delete</button ></td > ';
+                        html += '</tr>';
+                        html += '</tr>';
+                        html += '</tr>';
+                    });
+                    $('.vehiclesbody').html(html);
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
+
+        function Save() {
+            if ($('#vehicleName').val() == 0) {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Please Full Fill The Name',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                var Vehicle = new Object();
+                Vehicle.id = $('#Id').val();
+                Vehicle.vehicleType = $('#vehicleName').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/Vehicles/InsertOrUpdate/',
+                    data: Vehicle
+                }).then((result) => {
+                    //debugger;
+                    if (result.statusCode == 200) {
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Insert Successfully'
+                        });
+                        //ResetTable();
+                        window.location.href = "/Vehicles";
+                    }
+                    else {
+                        Swal.fire('Error', 'Insert Fail', 'error');
+                        ClearScreen();
+                    }
+                });
+            }
+        }
+
+        function Update() {
+            if ($('#vehicleName').val() == 0) {
+                Swal.fire({
+                    position: 'center',
+                    type: 'error',
+                    title: 'Please Full Fill The Name',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                //debugger;
+                var data = new Object();
+                data.id = $('#Id').val();
+                data.vehicleType = $('#vehicleName').val();
+                $.ajax({
+                    url: "/Vehicles/InsertOrUpdate/",
+                    data: data
+                }).then((result) => {
+                    //debugger;
+                    $('#myModal').hide();
+                    if (result.statusCode == 200) {
+                        Swal.fire({
+                            position: 'center',
+                            type: 'success',
+                            title: 'Update Successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+                        window.location.href = "/Vehicles";
+                    }
+                    else {
+                        Swal.fire('Error', 'Update Fail', 'error');
+                        ClearScreen();
+                    }
+                });
+            }
+        }
+
+        function GetbyId(id) {
+            $.ajax({
+                url: "/Vehicles/GetbyId",
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                data: { id: id },
+                success: function (result) {
+                    debugger;
+                    $('#Id').val(result.id);
+                    $('#vehicleName').val(result.vehicleType);
+                    $('#myModal').modal('show');
+                    $('#Update').show();
+                    $('#Save').hide();
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+            return false;
+        }
+
+        function ClearScreen() {
+            $('#Id').val('');
+            $('#vehicleName').val('');
+            $('#Update').hide();
+            $('#Save').show();
+        }
+
+        function ResetTable() {
+            $('#vehicles').dataTable().destroy();
+            $('#vehicles').dataTable({
+                "ajax": loadDataVehicles()
+            });
+        }
+
+        function Delete(id) {
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.value) {
+                    //debugger;
+                    $.ajax({
+                        url: "/Vehicles/Delete/",
+                        type: "Get",
+                        //contentType: "application/json;charset=UTF-8",
+                        dataType: "json",
+                        data: { id: id },
+                    }).then((result) => {
+                        debugger;
+                        if (result.statusCode == 200) {
+                            Swal.fire({
+                                position: 'center',
+                                type: 'success',
+                                title: 'Delete Successfully'
+                            });
+                            window.location.href = "/Vehicles";
+                        }
+                        else {
+                            Swal.fire('Error', 'Failed to Delete', 'error');
+                            ClearScreen();
+                        }
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

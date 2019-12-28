@@ -26,11 +26,16 @@ namespace API.Controllers
         }
 
         // GET: api/Vehicles/5
-        //[HttpGet("{id}", Name = "Get")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        [HttpGet("{id}", Name = "GetVehicles")]
+        public IActionResult Get(int id)
+        {
+            var get = vehicleService.Get(id);
+            if (get != null)
+            {
+                return Ok(get);
+            }
+            return BadRequest("Added Row Failed!");
+        }
 
         // POST: api/Vehicles
         [HttpPost]

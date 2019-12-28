@@ -9,7 +9,7 @@ namespace Data.Repository.Interface
     public interface IVehicleRepository
     {
         IEnumerable<Vehicle> Get();
-        Vehicle Get(int id);
+        Vehicle Get(int Id);
         int Create(VehicleVM vehicleVM);
         int Update(int Id, VehicleVM vehicleVM);
         int Delete(int Id);
