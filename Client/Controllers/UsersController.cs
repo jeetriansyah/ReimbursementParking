@@ -44,17 +44,17 @@ namespace Client.Controllers
 
         public ActionResult Index()
         {
-            //var Id = HttpContext.Session.GetString("Id");
-            //if (Id != null)
-            //{
+            var Id = HttpContext.Session.GetString("id");
+            if (Id != null)
+            {
                 return View();
-            //}
-            //return RedirectToAction(nameof(Login));
+            }
+            return RedirectToAction(nameof(Login));
         }
 
         public ActionResult Login()
         {
-            var Id = HttpContext.Session.GetString("Id");
+            var Id = HttpContext.Session.GetString("id");
             if (Id == null)
             {
                 return View();
@@ -100,7 +100,7 @@ namespace Client.Controllers
         [HttpGet]
         public ActionResult Logout()
         {
-            HttpContext.Session.Remove("Id");
+            HttpContext.Session.Remove("id");
             return RedirectToAction(nameof(Index));
         }
 

@@ -29,9 +29,9 @@ namespace Data.Repository
             //throw new NotImplementedException();
         }
 
-        public int Delete(int Id)
+        public int Delete(string Id)
         {
-            var delete = myContext.Departments.Find(Id);
+            var delete = myContext.Users.Find(Id);
             if (delete != null)
             {
                 delete.IsDelete = true;
@@ -39,11 +39,6 @@ namespace Data.Repository
             }
             return myContext.SaveChanges();
             //throw new NotImplementedException();
-        }
-
-        public int Delete(string Id)
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerable<User> Get()

@@ -1,5 +1,7 @@
 ﻿using API.Services.Interface;
 using Data.Model;
+using Data.Repository;
+using Data.Repository.Interface;
 using Data.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,15 @@ namespace API.Services
 {
     public class TransactionService : ITransactionService
     {
+        private ITransactionRepository _transactionRepository = new TransactionRepository();
+
+        public TransactionService() { }
+
+        public TransactionService(ITransactionRepository transactionRepository)
+        {
+            _transactionRepository = transactionRepository;
+        }
+        
         public int Create(TransactionVM transactionVM)
         {
             throw new NotImplementedException();
@@ -17,7 +28,7 @@ namespace API.Services
 
         public IEnumerable<Transaction> Get()
         {
-            throw new NotImplementedException();
+            return _transactionRepository.Get();
         }
 
         public Transaction Get(int Id)

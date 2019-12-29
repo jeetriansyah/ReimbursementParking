@@ -1,5 +1,7 @@
 ﻿using API.Services.Interface;
 using Data.Model;
+using Data.Repository;
+using Data.Repository.Interface;
 using Data.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -10,14 +12,30 @@ namespace API.Services
 {
     public class TransactionDetailService : ITransactionDetailService
     {
+        private ITransactionDetailRepository _transDetailRepository = new TransactionDetailRepository();
+
+        public TransactionDetailService() { }
+
+        public TransactionDetailService(ITransactionDetailRepository transDetailRepository)
+        {
+            _transDetailRepository = transDetailRepository;
+        }
+
         public int Create(TransactionDetailVM transactionVM)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(transactionVM.PlatNumber) || string.IsNullOrWhiteSpace(transactionVM.User.ToString()) || string.IsNullOrWhiteSpace(transactionVM.Vehicle.ToString()))
+            {
+                return 0;
+            }
+            else
+            {
+                return _transDetailRepository.Create(transactionVM);
+            }
         }
 
         public IEnumerable<TransactionDetail> Get()
         {
-            throw new NotImplementedException();
+            return _transDetailRepository.Get();
         }
 
         public TransactionDetail Get(int Id)

@@ -28,7 +28,12 @@ namespace Client.Controllers
         // GET: Roles
         public ActionResult Index()
         {
-            return View(List());
+            var Id = HttpContext.Session.GetString("id");
+            if (Id != null)
+            {
+                return View(List());
+            }
+            return RedirectToAction("Login", "Users");
         }
 
         public JsonResult List()
@@ -167,50 +172,50 @@ namespace Client.Controllers
         //    }
         //}
 
-        //// GET: Roles/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
+        // GET: Roles/Edit/5
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
 
-        //// POST: Roles/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
+        // POST: Roles/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
-        //// GET: Roles/Delete/5
+        // GET: Roles/Delete/5
         //public ActionResult Delete(int id)
         //{
         //    return View();
         //}
 
-        //// POST: Roles/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
+        // POST: Roles/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

@@ -13,6 +13,6 @@ namespace Data.ViewModel
         public string Password { get; set; }
         public int Role { get; set; }
         public int Department { get; set; }
-        public int Manager { get; set; }
+        public string Manager { get; set; }
     }
 }

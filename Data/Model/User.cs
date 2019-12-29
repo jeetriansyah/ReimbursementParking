@@ -28,15 +28,19 @@ namespace Data.Model
 
         public User(UserVM userVM)
         {
+            this.Id = userVM.Id;
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
+            this.Manager = userVM.Manager;
             this.CreateDate = DateTimeOffset.Now;
             this.IsDelete = false;
         }
         public void Update(UserVM userVM)
         {
+            this.Id = userVM.Id;
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
+            this.Manager = userVM.Manager;
             this.UpdateDate = DateTimeOffset.Now;
         }
 
