@@ -10,10 +10,10 @@ namespace API.Services.Interface
     public interface IUserService
     {
         IEnumerable<User> Get();
-        User Get(int Id);
+        User Get(string Id);
         int Create(UserVM userVM);
-        int Update(int Id, UserVM userVM);
-        int Delete(int Id);
+        int Update(string Id, UserVM userVM);
+        int Delete(string Id);
         User Get(UserVM userVM);
     }
 }

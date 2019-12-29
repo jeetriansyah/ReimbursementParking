@@ -64,7 +64,7 @@ namespace Client.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(string Email, string Password)
+        public ActionResult Login(string email, string password)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace Client.Controllers
                 {
                     BaseAddress = new Uri(getPort.client)
                 };
-                var responseTask = client.GetAsync("Authorizations/" + Email + "/" + Password);
+                var responseTask = client.GetAsync("Authorizations/" + email + "/" + password);
                 responseTask.Wait();
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
@@ -81,7 +81,8 @@ namespace Client.Controllers
                     var readTask = result.Content.ReadAsAsync<Authorization>();
                     readTask.Wait();
                     userCredential = readTask.Result;
-                    HttpContext.Session.SetString("Id", userCredential.Id);
+                    // set session
+                    HttpContext.Session.SetString("id", userCredential.Id);
                     return RedirectToAction(nameof(Index));
                 }
                 else

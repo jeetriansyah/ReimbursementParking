@@ -125,6 +125,31 @@ namespace Client.Controllers
             return Json(role);
         }
 
+        public JsonResult LoadRole()
+        {
+            IEnumerable<Role> role = null;
+
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var responseTask = client.GetAsync("Roles");
+            responseTask.Wait();
+            var result = responseTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IList<Role>>();
+                readTask.Wait();
+                role = readTask.Result;
+            }
+            else
+            {
+                role = Enumerable.Empty<Role>();
+                ModelState.AddModelError(string.Empty, "Server Error");
+            }
+            return Json(role);
+        }
+
         // POST: Roles/Create
         //[HttpPost]
         //[ValidateAntiForgeryToken]

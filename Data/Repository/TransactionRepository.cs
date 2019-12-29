@@ -1,14 +1,18 @@
-﻿using Data.Model;
+﻿using Data.Context;
+using Data.Model;
 using Data.Repository.Interface;
 using Data.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Data.Repository
 {
     public class TransactionRepository : ITransactionRepository
     {
+        MyContext myContext = new MyContext();
+
         public int Create(TransactionVM transactionVM)
         {
             throw new NotImplementedException();
@@ -16,7 +20,8 @@ namespace Data.Repository
 
         public IEnumerable<Transaction> Get()
         {
-            throw new NotImplementedException();
+            var trans = myContext.Transactions.ToList();
+            return trans;
         }
 
         public Transaction Get(int Id)

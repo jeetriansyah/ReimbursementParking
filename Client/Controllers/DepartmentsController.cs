@@ -108,6 +108,31 @@ namespace Client.Controllers
             return Json(result);
         }
 
+        public JsonResult LoadDepartment()
+        {
+            IEnumerable<Department> department = null;
+
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var responseTask = client.GetAsync("Departments");
+            responseTask.Wait();
+            var result = responseTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IList<Department>>();
+                readTask.Wait();
+                department = readTask.Result;
+            }
+            else
+            {
+                department = Enumerable.Empty<Department>();
+                ModelState.AddModelError(string.Empty, "Server Error");
+            }
+            return Json(department);
+        }
+
         // GET: Departments/Details/5
         public ActionResult Details(int id)
         {
