@@ -69,7 +69,7 @@ using Client.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(45, 56, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fc5d21edc2474b3d81b911f9562ccd22", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "428a2e51c32446adb5ec45016c372c4a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -87,7 +87,7 @@ using Client.Models;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(103, 604, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ae51dc30917242ef96ceeb9ae7aac7f8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb297b6c432b457584aecdc287b234d3", async() => {
                 BeginContext(206, 432, true);
                 WriteLiteral(@"
     <div class=""form-group row"">
