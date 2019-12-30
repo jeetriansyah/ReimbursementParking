@@ -126,6 +126,7 @@ D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Sha
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\UploadSTNK\Index.g.cshtml.cs
+D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\UploadSTNK\View.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Users\Index.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Users\Login.g.cshtml.cs
 D:\Metrodata\ReimbursementParking\Client\obj\Debug\netcoreapp2.1\Razor\Views\Vehicles\Index.g.cshtml.cs
