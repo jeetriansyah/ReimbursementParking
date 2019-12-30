@@ -16,7 +16,7 @@ namespace Data.Repository
 
         public int Create(AuthorizationVM authorizationVM)
         {
-            var auth = myContext.Authorizations.Where(a => a.Email.ToLower() == authorizationVM.Email);
+            var auth = myContext.Authorizations.Where(a => a.Id == authorizationVM.Id || a.Email == authorizationVM.Email);
             var result = 0;
             if (auth != null)
             {
@@ -41,7 +41,8 @@ namespace Data.Repository
 
         public Authorization Get(string Id)
         {
-            throw new NotImplementedException();
+            return myContext.Authorizations.Find(Id);
+            //throw new NotImplementedException();
         }
 
         public Authorization Get(AuthorizationVM authorizationVM)

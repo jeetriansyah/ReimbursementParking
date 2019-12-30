@@ -24,7 +24,7 @@ namespace Client.Controllers
             var Id = HttpContext.Session.GetString("id");
             if (Id != null)
             {
-                return View(List());
+                return View();
             }
             return RedirectToAction("Login", "Users");
         }
@@ -53,7 +53,7 @@ namespace Client.Controllers
             return Json(users);
         }
 
-        public JsonResult InsertOrUpdate(UserVM userVM)
+        public JsonResult Insert(UserVM userVM)
         {
             var client = new HttpClient
             {
@@ -70,8 +70,28 @@ namespace Client.Controllers
             }
             else
             {
+                return Json("Insert Failed");
+            }
+        }
+
+        public JsonResult Update(UserVM userVM)
+        {
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var myContent = JsonConvert.SerializeObject(userVM);
+            var buffer = System.Text.Encoding.UTF8.GetBytes(myContent);
+            var byteContent = new ByteArrayContent(buffer);
+            byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            if (userVM.Id == null)
+            {
                 var result = client.PutAsync("Users/" + userVM.Id, byteContent).Result;
                 return Json(result);
+            }
+            else
+            {
+                return Json("Update Failed");
             }
         }
 
@@ -109,6 +129,31 @@ namespace Client.Controllers
         }
 
         public JsonResult LoadManager()
+        {
+            IEnumerable<User> user = null;
+
+            var client = new HttpClient
+            {
+                BaseAddress = new Uri(getPort.client)
+            };
+            var responseTask = client.GetAsync("Users");
+            responseTask.Wait();
+            var result = responseTask.Result;
+            if (result.IsSuccessStatusCode)
+            {
+                var readTask = result.Content.ReadAsAsync<IList<User>>();
+                readTask.Wait();
+                user = readTask.Result;
+            }
+            else
+            {
+                user = Enumerable.Empty<User>();
+                ModelState.AddModelError(string.Empty, "Server Error");
+            }
+            return Json(user);
+        }
+
+        public JsonResult LoadUser()
         {
             IEnumerable<User> user = null;
 

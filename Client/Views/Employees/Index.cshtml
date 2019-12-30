@@ -251,13 +251,18 @@
                 success: function (result) {
                     //debugger;
                     var html = '';
+                    console.log(result);
                     $.each(result, function (key, Employee) {
+                        var manager = "-";
+                        if (Employee.manager != null) {
+                            manager = Employee.manager.firstName + " " + Employee.manager.lastName;
+                        }
                         html += '<tr>';
                         html += '<td>' + Employee.id + '</td>';
                         html += '<td>' + Employee.firstName + " " +Employee.lastName + '</td>';
                         html += '<td>' + Employee.role.roleName + '</td>';
                         html += '<td>' + Employee.department.departmentName + '</td>';
-                        html += '<td>' + Employee.manager+ '</td>';
+                        html += '<td>' + manager + '</td>';
                         html += '<td><button type="button" class="btn btn-warning" id="Update" onclick="return GetbyId(' + Employee.id + ')">Edit</button> ';
                         html += '<button type="button" class="btn btn-danger" id="Delete" onclick="return Delete(' + Employee.id + ')" >Delete</button ></td > ';
                         html += '</tr>';
@@ -374,12 +379,12 @@
             Employee.id = $('#Id').val();
             Employee.firstName = $('#firstName').val();
             Employee.lastName = $('#lastName').val();
-            Employee.role = $('#roleName').val();
-            Employee.department = $('#departmentName').val();
-            Employee.manager = $('#managerName').val();
+            Employee.role = $('#Role').val();
+            Employee.department = $('#Department').val();
+            Employee.manager = $('#Manager').val();
             $.ajax({
                 type: 'POST',
-                url: '/Employees/InsertOrUpdate/',
+                url: '/Employees/Insert/',
                 data: Employee
             }).then((result) => {
                 //debugger;
@@ -415,11 +420,11 @@
             data.id = $('#Id').val();
             data.firstName = $('#firstName').val();
             data.lastName = $('#lastName').val();
-            data.roleName = $('#roleName').val();
-            data.departmentName = $('#departmentName').val();
-            data.manager = $('#managerName').val();
+            data.roleName = $('#Role').val();
+            data.departmentName = $('#Department').val();
+            data.manager = $('#Manager').val();
             $.ajax({
-                url: "/Employees/InsertOrUpdate/",
+                url: "/Employees/Update/",
                 data: data
             }).then((result) => {
                 //debugger;

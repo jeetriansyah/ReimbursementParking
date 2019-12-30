@@ -19,7 +19,7 @@ namespace Data.Model
         public Nullable<DateTimeOffset> DeleteDate { get; set; }
         public Role Role { get; set; }
         public Department Department { get; set; }
-        public string Manager { get; set; }
+        public User Manager { get; set; }
 
         public User()
         {
@@ -31,7 +31,6 @@ namespace Data.Model
             this.Id = userVM.Id;
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
-            this.Manager = userVM.Manager;
             this.CreateDate = DateTimeOffset.Now;
             this.IsDelete = false;
         }
@@ -40,7 +39,6 @@ namespace Data.Model
             this.Id = userVM.Id;
             this.FirstName = userVM.FirstName;
             this.LastName = userVM.LastName;
-            this.Manager = userVM.Manager;
             this.UpdateDate = DateTimeOffset.Now;
         }
 

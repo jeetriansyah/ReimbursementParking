@@ -22,6 +22,7 @@ namespace Data.Repository
                 var push = new User(userVM);
                 push.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();
                 push.Department = myContext.Departments.Where(d => d.Id == userVM.Department).FirstOrDefault();
+                push.Manager = myContext.Users.Where(m => m.Id == userVM.Manager).FirstOrDefault();
                 myContext.Users.Add(push);
                 return myContext.SaveChanges();
             }
@@ -43,7 +44,7 @@ namespace Data.Repository
 
         public IEnumerable<User> Get()
         {
-            var sup = myContext.Users.Include("Role").Include("Department").Where(i => i.IsDelete == false);
+            var sup = myContext.Users.Include("Role").Include("Department").Include(u=>u.Manager).Where(i => i.IsDelete == false).ToList();
             return sup;
             //return myContext.Users.ToList();
             //throw new NotImplementedException();
@@ -76,6 +77,7 @@ namespace Data.Repository
             var update = myContext.Users.Find(Id);
             update.Role = myContext.Roles.Where(r => r.Id == userVM.Role).FirstOrDefault();
             update.Department = myContext.Departments.Where(d => d.Id == userVM.Department).FirstOrDefault();
+            update.Manager = myContext.Users.Where(m => m.Id == userVM.Manager).FirstOrDefault();
             update.Update(userVM);
             return myContext.SaveChanges();
             //throw new NotImplementedException();
